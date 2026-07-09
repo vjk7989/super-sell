@@ -5,7 +5,7 @@ import { products } from "@/data/products";
 
 export const metadata: Metadata = {
   title: "Brands",
-  description: "Browse premium fashion brands available on SuperSell."
+  description: "Browse premium fashion brands available at Love Loom."
 };
 
 export default function BrandsPage() {

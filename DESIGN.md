@@ -1,57 +1,57 @@
 ---
 version: "alpha"
-name: "SuperSell Crisp Boutique"
-description: "A bright, clean, bento-led fashion catalogue system for WhatsApp-first shopping."
+name: "Love Loom Handmade Luxury"
+description: "A calm, feminine storefront system for curated fashion and WhatsApp-first shopping."
 colors:
-  bg: "oklch(0.992 0.004 230)"
-  surface: "oklch(0.972 0.006 230)"
-  panel: "oklch(0.955 0.012 218)"
-  ink: "oklch(0.145 0.025 248)"
-  muted: "oklch(0.405 0.035 245)"
-  primary: "oklch(0.455 0.13 178)"
-  primary-hover: "oklch(0.395 0.125 178)"
-  accent: "oklch(0.70 0.13 76)"
-  plum: "oklch(0.38 0.125 340)"
-  clay: "oklch(0.57 0.12 32)"
-  line: "oklch(0.885 0.012 230)"
-  danger: "oklch(0.55 0.18 28)"
-  white: "#ffffff"
+  bg: "#FCFAF8"
+  surface: "#F8F1EE"
+  panel: "#D8C5B7"
+  ink: "#403531"
+  muted: "#6C5B52"
+  primary: "#6C5B52"
+  primary-hover: "#594A43"
+  accent: "#C7A56A"
+  plum: "#D79A9A"
+  clay: "#D8C5B7"
+  line: "#DED2CB"
+  danger: "#A34F4F"
+  white: "#FFFFFF"
 typography:
   display-lg:
-    fontFamily: "Georgia"
+    fontFamily: "Cormorant Garamond"
     fontSize: "6rem"
-    fontWeight: 700
+    fontWeight: 600
     lineHeight: "0.95"
     letterSpacing: "0em"
   display-md:
-    fontFamily: "Georgia"
+    fontFamily: "Cormorant Garamond"
     fontSize: "4.75rem"
-    fontWeight: 700
+    fontWeight: 600
     lineHeight: "1"
     letterSpacing: "0em"
   heading:
-    fontFamily: "Arial"
-    fontSize: "1.5rem"
-    fontWeight: 700
-    lineHeight: "1.2"
+    fontFamily: "Cormorant Garamond"
+    fontSize: "1.75rem"
+    fontWeight: 600
+    lineHeight: "1.15"
     letterSpacing: "0em"
   body:
-    fontFamily: "Arial"
+    fontFamily: "Lato"
     fontSize: "1rem"
     fontWeight: 400
     lineHeight: "1.65"
     letterSpacing: "0em"
   label:
-    fontFamily: "Arial"
+    fontFamily: "Lato"
     fontSize: "0.8125rem"
     fontWeight: 700
     lineHeight: "1.2"
     letterSpacing: "0em"
 rounded:
-  sm: "8px"
-  md: "14px"
-  lg: "22px"
-  xl: "28px"
+  sm: "6px"
+  md: "12px"
+  lg: "16px"
+  xl: "20px"
 spacing:
   xs: "0.5rem"
   sm: "0.75rem"
@@ -64,13 +64,13 @@ components:
     backgroundColor: "{colors.primary}"
     textColor: "{colors.white}"
     rounded: "{rounded.md}"
-    padding: "12px 18px"
+    padding: "12px 20px"
   button-primary-hover:
     backgroundColor: "{colors.primary-hover}"
     textColor: "{colors.white}"
     rounded: "{rounded.md}"
   card:
-    backgroundColor: "{colors.white}"
+    backgroundColor: "{colors.bg}"
     textColor: "{colors.ink}"
     rounded: "{rounded.xl}"
     padding: "24px"
@@ -82,7 +82,7 @@ components:
   badge-accent:
     backgroundColor: "{colors.accent}"
     textColor: "{colors.ink}"
-    rounded: "{rounded.md}"
+    rounded: "{rounded.sm}"
   muted-copy:
     backgroundColor: "{colors.bg}"
     textColor: "{colors.muted}"
@@ -95,12 +95,12 @@ components:
     padding: "8px"
   plum-bento:
     backgroundColor: "{colors.plum}"
-    textColor: "{colors.white}"
+    textColor: "{colors.ink}"
     rounded: "{rounded.xl}"
     padding: "24px"
   clay-bento:
     backgroundColor: "{colors.clay}"
-    textColor: "{colors.white}"
+    textColor: "{colors.ink}"
     rounded: "{rounded.xl}"
     padding: "24px"
   danger-badge:
@@ -111,32 +111,32 @@ components:
 
 ## Overview
 
-SuperSell uses a crisp boutique catalogue system: bright white retail surfaces, lightly blue-tinted panels, strong fashion imagery, structured bento composition, and a direct WhatsApp ordering path. The mood is a daylit premium store where shoppers are browsing with intent on a phone, then confirming an order through a message.
+Love Loom feels like a calm, daylit studio: warm ivory foundations, quiet blush bands, feminine display typography, tactile product imagery, and direct personal service through WhatsApp. Its heart-thread-and-spool identity carries the promise: “Woven with love, made to last.”
 
 ## Colors
 
-The body foundation is near-white, not cream. `surface` and `panel` create clean separation without heavy glass or beige warmth. `primary` is reserved for conversion actions, active controls, and order confidence. `accent` is a small brass merchandising note for offers and premium cues. `plum` and `clay` are supporting campaign colors for bento blocks only.
+Warm ivory is the primary canvas. Blush and champagne separate sections without visual heaviness. Taupe owns conversion actions and secondary copy, while a deeper brown ensures accessible body text. Muted stone remains a decorative neutral. Dusty rose supports merchandising moments, while soft gold is limited to small icons, focus details, and premium accents.
 
 ## Typography
 
-Georgia remains the display voice for boutique polish, while Arial carries product data, controls, labels, and body text. Headings use balanced wrapping, no negative tracking, and restrained scale inside cards and panels. Body copy stays high contrast and avoids long low-contrast gray passages.
+Cormorant Garamond gives headings a crafted, timeless voice. Lato keeps product data, controls, pricing, and body copy clear. Headings use balanced wrapping, restrained scale, and no negative letter spacing.
 
 ## Layout
 
-Layouts favor asymmetric bento grids, image-led category and brand blocks, stable product cards, and generous section rhythm. Page sections are full-width bands or unframed constrained layouts; cards are reserved for actual products, categories, brands, cart items, form panels, and repeated commerce objects.
+The homepage follows a deliberate retail sequence: hero, events, categories, brands, best sellers, and personal ordering. Asymmetric bento arrangements create visual rhythm while product and event cards remain easy to scan.
 
 ## Elevation & Depth
 
-Depth is clean and retail-like: subtle borders, soft shadows, and rare backdrop blur only where it supports a sticky navigation or purchase panel. Decorative orbs and generic glow fields are avoided.
+Use fine warm borders and low, diffuse shadows. Avoid decorative glass, glow, and ornamental gradients. Product photography supplies most of the depth.
 
 ## Shapes
 
-Buttons and controls use 14px to pill radii depending on affordance. Cards use 22px to 28px radii for a modern boutique feel, with no nested cards.
+Controls use 6px to 12px radii. Cards and image frames use 16px to 20px radii. Shapes remain soft without becoming playful or pill-heavy.
 
 ## Components
 
-Primary buttons use teal-green with white text. Secondary buttons use ink. Ghost controls use white surfaces with visible borders. Product cards prioritize image, brand, name, price, stock, and quick actions. Filter controls are compact, high-contrast, and mobile friendly.
+Primary buttons use warm taupe with white text and a darker taupe hover. Cards use ivory surfaces, champagne image wells, and restrained borders. Gold appears only in small supporting details.
 
 ## Do's and Don'ts
 
-Do lead with product imagery, clear prices, stock state, and WhatsApp actions. Do use bento grids for merchandising variety. Do keep contrast AA or better. Do not add payment, authentication, backend, or admin flows. Do not use heavy glass, decorative orbs, gradient text, repeated section eyebrows, or uniform icon-card grids.
+Do lead with imagery, clear prices, stock, and personal shopping actions. Do keep event data structured and useful even when empty. Do not invent event dates, add payment infrastructure, overuse gold, or recreate the reference brand literally.

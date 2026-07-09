@@ -18,7 +18,7 @@ export function ProductCard({ product }: { product: Product }) {
 
   return (
     <motion.article
-      className="group relative overflow-hidden rounded-4xl border border-line bg-white shadow-soft"
+      className="group relative overflow-hidden rounded-4xl border border-line bg-bg shadow-soft"
       whileHover={{ y: -6 }}
       transition={{ duration: 0.3, ease: "easeOut" }}
     >
@@ -49,7 +49,7 @@ export function ProductCard({ product }: { product: Product }) {
           <span className="text-xs font-semibold text-muted">{product.id}</span>
         </div>
         <div>
-          <Link href={`/products/${product.id}`} className="font-display text-xl font-bold leading-tight text-ink transition hover:text-primary">
+          <Link href={`/products/${product.id}`} className="font-display text-2xl font-semibold leading-tight text-ink transition hover:text-primary">
             {product.name}
           </Link>
           <p className="mt-1 line-clamp-2 text-sm leading-6 text-muted">{product.description}</p>
@@ -57,7 +57,7 @@ export function ProductCard({ product }: { product: Product }) {
         <RatingStars rating={product.rating} reviewCount={product.reviewCount} />
         <div className="flex items-end justify-between gap-3">
           <div>
-            <p className="text-xs font-semibold text-primary">Catalogue price</p>
+            <p className="text-xs font-bold text-muted">Price</p>
             <div className="flex items-center gap-2">
               <strong className="text-lg">{formatPrice(price)}</strong>
               {product.discountPrice ? <span className="text-sm text-muted line-through">{formatPrice(product.price)}</span> : null}

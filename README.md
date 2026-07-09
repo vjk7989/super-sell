@@ -1,6 +1,6 @@
-# SuperSell
+# Love Loom
 
-Modern premium ecommerce catalogue built with Next.js, TypeScript, Tailwind CSS, Framer Motion, and Lucide React. It shows products, categories, brands, product details, a persistent cart, sharing, and WhatsApp-based ordering.
+Love Loom is a modern handmade-luxury ecommerce catalogue built with Next.js, TypeScript, Tailwind CSS, Framer Motion, and Lucide React. It presents products, categories, brands, product details, a persistent cart, sharing, and WhatsApp-based ordering.
 
 ## Run
 

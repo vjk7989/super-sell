@@ -3,7 +3,7 @@ import { CartPageClient } from "@/components/cart/CartPageClient";
 
 export const metadata: Metadata = {
   title: "Cart",
-  description: "Review selected SuperSell products and checkout through WhatsApp."
+  description: "Review selected Love Loom products and checkout through WhatsApp."
 };
 
 export default function CartPage() {

@@ -8,7 +8,7 @@ export function ContactClient() {
 
   return (
     <form
-      className="rounded-4xl border border-line bg-white p-6 shadow-soft"
+      className="rounded-4xl border border-line bg-bg p-6 shadow-soft"
       onSubmit={(event) => {
         event.preventDefault();
         setSent(true);

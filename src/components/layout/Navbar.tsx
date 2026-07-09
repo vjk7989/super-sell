@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, ShoppingBag, X } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -33,16 +34,20 @@ export function Navbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-40 px-4 pt-4">
       <nav
-        className={`container-shell rounded-3xl border px-4 py-3 transition ${
-          scrolled ? "glass" : "border-line bg-white/86 shadow-soft backdrop-blur"
+        className={`container-shell rounded-2xl border px-4 py-3 transition ${
+          scrolled ? "glass" : "border-line bg-bg/94 shadow-soft backdrop-blur"
         }`}
       >
         <div className="flex items-center justify-between gap-4">
-          <Link href="/" className="flex items-center gap-3 font-display text-xl font-bold">
-            <span className="flex size-10 items-center justify-center rounded-2xl bg-ink text-sm text-white">
-              SS
-            </span>
-            {siteConfig.name}
+          <Link href="/" className="shrink-0" aria-label={`${siteConfig.name} home`}>
+            <Image
+              src={siteConfig.logo}
+              alt="Love Loom — Woven with love, made to last"
+              width={1904}
+              height={826}
+              priority
+              className="h-14 w-auto object-contain md:h-16"
+            />
           </Link>
 
           <div className="hidden items-center gap-1 lg:flex">
@@ -50,8 +55,8 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`rounded-2xl px-4 py-2 text-sm font-bold transition hover:bg-panel ${
-                  pathname === link.href ? "bg-ink text-white" : "text-muted"
+                className={`rounded-xl px-4 py-2 text-sm font-bold transition hover:bg-surface ${
+                  pathname === link.href ? "bg-primary text-white" : "text-muted"
                 }`}
               >
                 {link.label}
@@ -62,7 +67,7 @@ export function Navbar() {
           <div className="flex items-center gap-2">
             <Link
               href="/cart"
-              className="focus-ring relative flex size-11 items-center justify-center rounded-2xl bg-ink text-white shadow-soft"
+              className="focus-ring relative flex size-11 items-center justify-center rounded-xl bg-primary text-white shadow-soft"
               aria-label="Cart"
             >
               <ShoppingBag aria-hidden="true" className="size-5" />
@@ -71,7 +76,7 @@ export function Navbar() {
               </span>
             </Link>
             <button
-              className="focus-ring flex size-11 items-center justify-center rounded-2xl border border-line bg-white lg:hidden"
+              className="focus-ring flex size-11 items-center justify-center rounded-xl border border-line bg-bg lg:hidden"
               onClick={() => setOpen((value) => !value)}
               aria-label="Toggle menu"
             >
@@ -94,7 +99,7 @@ export function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="rounded-2xl bg-panel px-4 py-3 font-semibold"
+                  className="rounded-xl bg-surface px-4 py-3 font-semibold"
                 >
                   {link.label}
                 </Link>

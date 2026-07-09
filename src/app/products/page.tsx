@@ -4,7 +4,7 @@ import { products } from "@/data/products";
 
 export const metadata: Metadata = {
   title: "Products",
-  description: "Browse SuperSell products by category, brand, price, rating, and availability."
+  description: "Browse Love Loom products by category, brand, price, rating, and availability."
 };
 
 export default async function ProductsPage({

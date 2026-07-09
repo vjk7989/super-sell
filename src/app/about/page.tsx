@@ -3,7 +3,7 @@ import { CheckCircle2, MessageCircle, ShieldCheck, Sparkles } from "lucide-react
 
 export const metadata: Metadata = {
   title: "About",
-  description: "Learn about SuperSell, the premium WhatsApp-first fashion catalogue."
+  description: "Learn about Love Loom, a thoughtful WhatsApp-first fashion catalogue."
 };
 
 const promises = [
@@ -22,7 +22,7 @@ export default function AboutPage() {
               A premium catalogue for simpler fashion buying
             </h1>
             <p className="mt-5 text-lg leading-8 text-muted">
-              SuperSell brings clothing, footwear, accessories, brands, pricing, and product details into a clean catalogue experience. Instead of forcing shoppers through a full payment platform, orders begin with a clear WhatsApp conversation.
+              Love Loom brings clothing, footwear, accessories, brands, pricing, and product details into a calm catalogue experience. Instead of forcing shoppers through a full payment platform, orders begin with a clear WhatsApp conversation.
             </p>
           </div>
           <div className="rounded-4xl border border-line bg-white p-6 shadow-soft">

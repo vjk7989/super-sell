@@ -6,11 +6,11 @@ brand
 
 ## Users
 
-SuperSell serves shoppers browsing fashion and lifestyle products on mobile, tablet, and desktop before ordering through WhatsApp. Users want to discover products quickly, compare categories and brands, inspect pricing, availability, ratings, sizes, colors, materials, and similar items, then send a clear order request without creating an account or using a payment gateway.
+Love Loom serves shoppers browsing fashion and lifestyle products on mobile, tablet, and desktop before ordering through WhatsApp. Users want to discover products quickly, compare categories and brands, inspect pricing, availability, ratings, sizes, colors, materials, and similar items, then send a clear order request without creating an account or using a payment gateway.
 
 ## Product Purpose
 
-SuperSell is a premium ecommerce catalogue for clothing and fashion products. It exists to present curated products, categories, and brands with a polished retail feel, while making the buying path simple through configurable WhatsApp order redirection. Success means shoppers can search, filter, view product details, add items to a persistent cart, share products, and send complete product or cart order details to the store on WhatsApp.
+Love Loom is a premium ecommerce catalogue for clothing and fashion products. It exists to present curated products, categories, and brands with a polished retail feel, while making the buying path simple through configurable WhatsApp order redirection. Success means shoppers can search, filter, view product details, add items to a persistent cart, share products, and send complete product or cart order details to the store on WhatsApp.
 
 ## Brand Personality
 
