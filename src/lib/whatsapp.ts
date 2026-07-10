@@ -2,6 +2,7 @@ import { siteConfig } from "@/config/site";
 import type { Product } from "@/types/product";
 import { formatPrice } from "@/lib/format";
 import type { CartItem } from "@/context/CartContext";
+import { trackEvent } from "@/lib/analytics";
 
 type ProductOrderOptions = {
   quantity: number;
@@ -72,7 +73,9 @@ export function createCartWhatsAppMessage(cartItems: CartItem[]): string {
 }
 
 export function openWhatsApp(message: string): void {
+  trackEvent("whatsapp_click", {
+    message_type: message.includes("following products") ? "cart_order" : "product_or_enquiry"
+  });
   const url = `https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(message)}`;
   window.open(url, "_blank", "noopener,noreferrer");
 }
-

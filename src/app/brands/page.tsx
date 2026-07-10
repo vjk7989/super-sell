@@ -5,7 +5,9 @@ import { products } from "@/data/products";
 
 export const metadata: Metadata = {
   title: "Brands",
-  description: "Browse premium fashion brands available at Love Loom."
+  description: "Browse curated fashion and Indian-wear brands available at Love Loom in Hyderabad.",
+  alternates: { canonical: "/brands" },
+  openGraph: { url: "/brands", title: "Fashion Brands at Love Loom", description: "Explore curated labels for everyday style, Indian wear, occasion dressing, and accessories." }
 };
 
 export default function BrandsPage() {

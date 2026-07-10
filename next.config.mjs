@@ -9,6 +9,10 @@ const nextConfig = {
     root: projectRoot
   },
   images: {
+    formats: ["image/avif", "image/webp"],
+    deviceSizes: [360, 480, 640, 768, 1024, 1280, 1536],
+    imageSizes: [64, 96, 128, 180, 256, 384],
+    minimumCacheTTL: 31536000,
     remotePatterns: [
       {
         protocol: "https",

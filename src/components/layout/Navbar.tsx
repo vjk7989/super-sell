@@ -14,6 +14,7 @@ const links = [
   { href: "/products", label: "Products" },
   { href: "/categories", label: "Categories" },
   { href: "/brands", label: "Brands" },
+  { href: "/journal", label: "Journal" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" }
 ];
@@ -41,11 +42,10 @@ export function Navbar() {
         <div className="flex items-center justify-between gap-4">
           <Link href="/" className="shrink-0" aria-label={`${siteConfig.name} home`}>
             <Image
-              src={siteConfig.logo}
+              src="/brand/love-loom-wordmark-optimized.webp"
               alt="Love Loom — Woven with love, made to last"
               width={1904}
               height={826}
-              priority
               className="h-14 w-auto object-contain md:h-16"
             />
           </Link>

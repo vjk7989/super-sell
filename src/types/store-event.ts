@@ -10,5 +10,7 @@ export interface StoreEvent {
   description: string;
   image: string;
   status: StoreEventStatus;
+  badge?: string;
+  isDemo?: boolean;
   detailsUrl?: string;
 }

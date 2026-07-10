@@ -3,7 +3,9 @@ import { CheckCircle2, MessageCircle, ShieldCheck, Sparkles } from "lucide-react
 
 export const metadata: Metadata = {
   title: "About",
-  description: "Learn about Love Loom, a thoughtful WhatsApp-first fashion catalogue."
+  description: "Learn about Love Loom, a thoughtful WhatsApp-first fashion catalogue in Banjara Hills, Hyderabad.",
+  alternates: { canonical: "/about" },
+  openGraph: { url: "/about", title: "About Love Loom", description: "Our approach to thoughtful fashion, product clarity, and personal WhatsApp ordering." }
 };
 
 const promises = [

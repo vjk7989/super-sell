@@ -1,76 +1,118 @@
-import { CalendarDays, Instagram, MapPin, Phone } from "lucide-react";
+import { ArrowUpRight, CalendarDays, Clock3, Instagram, MapPin, MessageCircle } from "lucide-react";
 import Image from "next/image";
-import { Button } from "@/components/common/Button";
+import { TrackedLink } from "@/components/common/TrackedLink";
 import { SectionHeading } from "@/components/common/SectionHeading";
 import { siteConfig } from "@/config/site";
 import { storeEvents } from "@/data/events";
+import type { StoreEvent } from "@/types/store-event";
+
+function EventMeta({ event, light = false }: { event: StoreEvent; light?: boolean }) {
+  const copyClass = light ? "text-white/80" : "text-muted";
+  return (
+    <div className={`mt-4 grid gap-2 text-sm ${copyClass}`}>
+      <p className="flex items-center gap-2">
+        <CalendarDays aria-hidden="true" className="size-4 text-accent" />
+        {event.dateRange}
+      </p>
+      <p className="flex items-center gap-2">
+        <Clock3 aria-hidden="true" className="size-4 text-accent" />
+        {event.time}
+      </p>
+      <p className="flex items-start gap-2">
+        <MapPin aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-accent" />
+        {event.venue}
+      </p>
+    </div>
+  );
+}
+
+function EventCard({ event, feature = false }: { event: StoreEvent; feature?: boolean }) {
+  if (feature) {
+    return (
+      <article className="group relative h-full min-h-[34rem] overflow-hidden rounded-4xl border border-line bg-ink shadow-soft lg:min-h-0">
+        <Image
+          src={event.image}
+          alt="Guests browsing handcrafted clothing at a Love Loom studio preview"
+          fill
+          sizes="(min-width: 1024px) 58vw, 100vw"
+          className="object-cover transition duration-700 ease-out group-hover:scale-[1.025]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/92 via-ink/16 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 p-7 text-white md:p-9">
+          <span className="inline-flex rounded-full border border-white/35 bg-bg/15 px-3 py-1 text-xs font-bold">{event.badge}</span>
+          <h3 className="mt-4 max-w-xl font-display text-4xl font-semibold md:text-5xl [text-wrap:balance]">{event.title}</h3>
+          <p className="mt-3 max-w-xl text-white/82">{event.description}</p>
+          <EventMeta event={event} light />
+          <TrackedLink href={event.detailsUrl ?? siteConfig.instagramUrl} target="_blank" eventName="event_update_click" eventParams={{ event_id: event.id, location: "event_feature" }} className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-white hover:text-accent">
+            Event updates
+            <ArrowUpRight aria-hidden="true" className="size-4" />
+          </TrackedLink>
+        </div>
+      </article>
+    );
+  }
+
+  return (
+    <article className="group grid h-full min-h-72 overflow-hidden rounded-4xl border border-line bg-bg shadow-soft sm:grid-cols-[0.9fr_1.1fr] lg:min-h-0">
+      <div className="relative min-h-56 overflow-hidden bg-panel sm:min-h-0">
+        <Image
+          src={event.image}
+          alt={`${event.title} preview`}
+          fill
+          sizes="(min-width: 1024px) 22vw, (min-width: 640px) 45vw, 100vw"
+          className="object-cover transition duration-700 ease-out group-hover:scale-[1.035]"
+        />
+      </div>
+      <div className="flex flex-col justify-center p-6">
+        <span className="text-xs font-bold text-primary">{event.badge}</span>
+        <h3 className="mt-2 font-display text-3xl font-semibold leading-none">{event.title}</h3>
+        <EventMeta event={event} />
+        <TrackedLink href={event.detailsUrl ?? siteConfig.instagramUrl} target="_blank" eventName="event_update_click" eventParams={{ event_id: event.id, location: "event_card" }} className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-primary hover:text-primary-hover">
+          Event updates
+          <ArrowUpRight aria-hidden="true" className="size-4" />
+        </TrackedLink>
+      </div>
+    </article>
+  );
+}
 
 export function UpcomingEvents() {
+  const [leadEvent, ...supportingEvents] = storeEvents;
+
   return (
     <section className="section-pad bg-surface">
       <div className="container-shell">
         <SectionHeading
-          title="Come, see us in person"
-          copy="Pop-ups, open studio days, and thoughtful gatherings around Hyderabad."
+          title="Upcoming events & pop-ups"
+          copy="Meet the collection in person through studio previews, weekend pop-ups, and thoughtful gatherings around Hyderabad."
+          action={
+            <TrackedLink href={siteConfig.instagramUrl} target="_blank" eventName="instagram_click" eventParams={{ location: "events_heading" }} className="focus-ring inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-line bg-bg px-5 py-2.5 text-sm font-bold text-ink transition hover:border-accent hover:bg-surface">
+              <Instagram aria-hidden="true" className="size-4" />
+              Follow event updates
+            </TrackedLink>
+          }
         />
-        {storeEvents.length ? (
-          <div className="grid gap-5 lg:grid-cols-3">
-            {storeEvents.map((event) => (
-              <article key={event.id} className="overflow-hidden rounded-4xl border border-line bg-bg shadow-soft">
-                <div className="relative aspect-[4/3] bg-panel">
-                  <Image src={event.image} alt="" fill className="object-cover" />
-                </div>
-                <div className="p-6">
-                  <p className="text-sm font-bold text-primary">{event.dateRange} · {event.time}</p>
-                  <h3 className="mt-2 font-display text-3xl font-semibold">{event.title}</h3>
-                  <p className="mt-3 text-muted">{event.venue}</p>
-                </div>
-              </article>
-            ))}
+        <div className="grid gap-5 lg:grid-cols-12 lg:grid-rows-[310px_310px]">
+          <div className="lg:col-span-7 lg:row-span-2">
+            <EventCard event={leadEvent} feature />
           </div>
-        ) : (
-          <div className="grid overflow-hidden rounded-4xl border border-line bg-bg shadow-soft lg:grid-cols-[1.05fr_0.95fr]">
-            <div className="flex flex-col justify-center p-7 md:p-12">
-              <CalendarDays aria-hidden="true" className="size-9 text-accent" />
-              <h3 className="mt-6 font-display text-4xl font-semibold md:text-5xl [text-wrap:balance]">
-                New pop-ups are taking shape.
-              </h3>
-              <p className="mt-4 max-w-xl leading-7 text-muted">
-                We are preparing our next in-person edit. Follow along for dates, previews, and first looks.
-              </p>
-              <div className="mt-7 flex flex-wrap gap-3">
-                <Button href={siteConfig.instagramUrl} variant="primary">
-                  <Instagram aria-hidden="true" className="size-4" />
-                  Follow on Instagram
-                </Button>
-                <Button href={`tel:${siteConfig.phone.replace(/\s/g, "")}`} variant="ghost">
-                  <Phone aria-hidden="true" className="size-4" />
-                  Call the store
-                </Button>
-              </div>
+          {supportingEvents.map((event) => (
+            <div key={event.id} className="lg:col-span-5">
+              <EventCard event={event} />
             </div>
-            <a
-              href={siteConfig.mapUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="group relative min-h-72 overflow-hidden bg-panel"
-            >
-              <Image
-                src="/products/category-shirts-tees.png"
-                alt="Soft neutral clothing displayed on a boutique rail"
-                fill
-                className="object-cover transition duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-ink/20" />
-              <div className="absolute inset-x-5 bottom-5 rounded-2xl bg-bg/95 p-5 shadow-soft">
-                <div className="flex gap-3">
-                  <MapPin aria-hidden="true" className="mt-0.5 size-5 shrink-0 text-primary" />
-                  <p className="text-sm font-bold leading-6">{siteConfig.address}</p>
-                </div>
-              </div>
-            </a>
+          ))}
+        </div>
+        <div className="mt-6 flex flex-col gap-4 rounded-3xl border border-line bg-bg p-5 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex gap-3">
+            <MessageCircle aria-hidden="true" className="mt-0.5 size-5 shrink-0 text-accent" />
+            <p className="max-w-2xl text-sm leading-6 text-muted">
+              These are preview event listings. Follow Instagram or message us for confirmed dates, invitations, and venue updates.
+            </p>
           </div>
-        )}
+          <TrackedLink href={`https://wa.me/${siteConfig.whatsappNumber}`} target="_blank" eventName="whatsapp_click" eventParams={{ location: "events", message_type: "event_enquiry" }} className="focus-ring inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-xl bg-primary px-5 py-2.5 text-sm font-bold text-white shadow-soft transition hover:bg-primary-hover">
+            Ask on WhatsApp
+          </TrackedLink>
+        </div>
       </div>
     </section>
   );

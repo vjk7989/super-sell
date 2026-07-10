@@ -9,6 +9,7 @@ import { ProductGallery } from "@/components/product/ProductGallery";
 import { RatingStars } from "@/components/product/RatingStars";
 import { useCart } from "@/hooks/useCart";
 import { formatPrice } from "@/lib/format";
+import { trackEvent } from "@/lib/analytics";
 import { createProductWhatsAppMessage, openWhatsApp } from "@/lib/whatsapp";
 import type { Product } from "@/types/product";
 
@@ -100,7 +101,16 @@ export function ProductDetailClient({ product }: { product: Product }) {
             <Button
               type="button"
               disabled={!product.inStock}
-              onClick={() => addToCart(product, quantity, { size, color })}
+              onClick={() => {
+                addToCart(product, quantity, { size, color });
+                trackEvent("add_to_cart", {
+                  currency: "INR",
+                  value: price * quantity,
+                  item_id: product.id,
+                  item_name: product.name,
+                  quantity
+                });
+              }}
             >
               <ShoppingBag aria-hidden="true" className="size-4" />
               Add to Cart

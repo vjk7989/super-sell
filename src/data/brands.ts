@@ -11,7 +11,7 @@ export const brands: Brand[] = [
     id: "brand-urban-loom",
     name: "Urban Loom",
     slug: "urban-loom",
-    logo: "/brands/brand-urban-loom-ai.png",
+    logo: "/editorial/boutique-linen-rail-optimized.webp",
     description: "Modern cotton staples with quiet tailoring details."
   },
   {
@@ -25,7 +25,7 @@ export const brands: Brand[] = [
     id: "brand-mira-mode",
     name: "Mira Mode",
     slug: "mira-mode",
-    logo: "/brands/brand-mira-mode-ai.png",
+    logo: "/editorial/model-dusty-rose-optimized.webp",
     description: "Soft occasionwear with fluid silhouettes and polished finishes."
   },
   {
@@ -39,7 +39,7 @@ export const brands: Brand[] = [
     id: "brand-kosha-studio",
     name: "Kosha Studio",
     slug: "kosha-studio",
-    logo: "/brands/brand-kosha-studio-ai.png",
+    logo: "/editorial/model-sage-kurta-optimized.webp",
     description: "Contemporary ethnicwear with artisan-inspired textures."
   },
   {

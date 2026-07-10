@@ -2,6 +2,10 @@
 
 Love Loom is a modern handmade-luxury ecommerce catalogue built with Next.js, TypeScript, Tailwind CSS, Framer Motion, and Lucide React. It presents products, categories, brands, product details, a persistent cart, sharing, and WhatsApp-based ordering.
 
+## Analytics
+
+Google Analytics 4 uses measurement ID `G-J05Z5F9E65` from the root layout. In the GA4 property, keep Enhanced Measurement enabled with "Page changes based on browser history events" selected so App Router navigations register without duplicate manual page-view events.
+
 ## Run
 
 ```bash

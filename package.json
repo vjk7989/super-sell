@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "design:lint": "designmd lint DESIGN.md",
+    "test:homepage": "node scripts/check-homepage.mjs",
     "start": "next start",
     "lint": "eslint . --max-warnings=0"
   },

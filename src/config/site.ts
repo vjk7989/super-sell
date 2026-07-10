@@ -9,5 +9,7 @@ export const siteConfig = {
   address: "Unit 1, 3rd Floor, Road No. 10, Gouri Shankar Nagar Colony, Banjara Hills, Hyderabad, Telangana 500034",
   instagramUrl: "https://www.instagram.com/loveloom_hyderabad?igsh=MXFtOWZzNzNvYWsxYQ==",
   mapUrl: "https://www.google.com/maps/search/?api=1&query=Unit+1%2C+3rd+Floor%2C+Road+No.+10%2C+Gouri+Shankar+Nagar+Colony%2C+Banjara+Hills%2C+Hyderabad%2C+Telangana+500034",
-  websiteUrl: "https://example.com"
+  websiteUrl: "https://theloveloom.in",
+  googleAnalyticsId: "G-J05Z5F9E65",
+  businessHours: "Mo-Sa 10:00-20:00"
 };

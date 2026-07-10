@@ -4,7 +4,9 @@ import { products } from "@/data/products";
 
 export const metadata: Metadata = {
   title: "Products",
-  description: "Browse Love Loom products by category, brand, price, rating, and availability."
+  description: "Browse Love Loom clothing, Indian wear, dresses, shirts, denim, footwear, and accessories by category, brand, price, and availability.",
+  alternates: { canonical: "/products" },
+  openGraph: { url: "/products", title: "Love Loom Product Catalogue", description: "Browse thoughtfully selected fashion with clear prices, materials, sizing, care, and availability." }
 };
 
 export default async function ProductsPage({

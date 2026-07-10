@@ -123,7 +123,7 @@ Cormorant Garamond gives headings a crafted, timeless voice. Lato keeps product 
 
 ## Layout
 
-The homepage follows a deliberate retail sequence: hero, events, categories, brands, best sellers, and personal ordering. Asymmetric bento arrangements create visual rhythm while product and event cards remain easy to scan.
+The homepage follows a deliberate retail sequence: hero, events, categories, brands, best sellers, and personal ordering. Events, categories, and brands use distinct 12-column bento compositions with explicit feature, landscape, portrait, and compact card variants. Desktop spans collapse into clean one- and two-column flows on smaller screens.
 
 ## Elevation & Depth
 
@@ -135,7 +135,15 @@ Controls use 6px to 12px radii. Cards and image frames use 16px to 20px radii. S
 
 ## Components
 
-Primary buttons use warm taupe with white text and a darker taupe hover. Cards use ivory surfaces, champagne image wells, and restrained borders. Gold appears only in small supporting details.
+Primary buttons use warm taupe with white text and a darker taupe hover. Cards use ivory surfaces, champagne image wells, restrained borders, and quiet shadows. Editorial card variants place readable content over deliberate image crops; standard catalogue cards retain separated content. Gold appears only in small supporting details.
+
+## Imagery
+
+Photography uses natural studio daylight, Indian models, tactile linen and handloom details, and the Love Loom ivory, blush, taupe, champagne, dusty rose, and muted sage palette. Model editorials carry fashion hierarchy while boutique rails, textile details, and event scenes provide context and pacing.
+
+## Journal
+
+Journal pages use a calm long-form reading column, answer-first callouts, semantic headings, accessible comparison tables, visible sources, expandable FAQs, and related-product links. Editorial cards remain image-led while article body copy prioritizes comfortable line length and strong contrast.
 
 ## Do's and Don'ts
 

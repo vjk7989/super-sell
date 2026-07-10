@@ -1,10 +1,10 @@
 import { Heart, Leaf, MessageCircle, Scissors } from "lucide-react";
-import { AnimatedSection } from "@/components/common/AnimatedSection";
 import { Button } from "@/components/common/Button";
 import { FeaturedBrands } from "@/components/home/FeaturedBrands";
 import { FeaturedCategories } from "@/components/home/FeaturedCategories";
 import { FeaturedProducts } from "@/components/home/FeaturedProducts";
 import { Hero } from "@/components/home/Hero";
+import { JournalEdit } from "@/components/home/JournalEdit";
 import { UpcomingEvents } from "@/components/home/UpcomingEvents";
 
 const promises = [
@@ -17,18 +17,14 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <AnimatedSection>
+      <div id="upcoming-events">
         <UpcomingEvents />
-      </AnimatedSection>
-      <AnimatedSection>
-        <FeaturedCategories />
-      </AnimatedSection>
-      <AnimatedSection>
-        <FeaturedBrands />
-      </AnimatedSection>
-      <AnimatedSection>
-        <FeaturedProducts />
-      </AnimatedSection>
+      </div>
+      <FeaturedCategories />
+      <FeaturedProducts edit="new-arrivals" />
+      <FeaturedBrands />
+      <FeaturedProducts />
+      <JournalEdit />
       <section className="section-pad">
         <div className="container-shell">
           <div className="grid gap-8 rounded-4xl border border-line bg-surface p-8 md:grid-cols-[1fr_auto] md:items-end md:p-12">
